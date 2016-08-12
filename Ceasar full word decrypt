@@ -1,1 +1,27 @@
-Placeholder again
+def cc(pt, shift):
+	length=len(pt)
+	counter1=length
+	counter2=0
+	word='encrypted stuff '
+	while (counter1>0):
+		counter1-=1
+	#	print ('counter1', counter1)
+		if(ord(pt[counter2])<91):
+			word=word+(chr((((ord(pt[counter2])-65)+shift)%26)+65))
+			counter2=counter2+1
+	#		print(counter2, 'c2')
+		if(ord(pt[counter2])>96):
+			word=word+(chr((((ord(pt[counter2])-97)+shift)%26)+97))
+			counter2=counter2+1
+		#	print(counter2, 'c2')
+	else:
+		return word
+
+cc('apab', 12)
+def ccd(ct):
+	counter4=-26
+	while(counter4<27):
+		counter4=counter4+1
+		print cc(ct,counter4)
+	else:
+		return 'finished'
